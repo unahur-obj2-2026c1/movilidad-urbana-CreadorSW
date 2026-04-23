@@ -14,8 +14,8 @@ class Monopatin extends Vehiculo {
 
 class Usuario {
 
-    +alquilarVehiculo(vehiculo: Vehiculo): void
-    +devolverVehiculo(vehiculo: Vehiculo): void
+    +alquilarVehiculo(vehiculo: Vehiculo, cantidadDias: int): void
+    +devolverVehiculo(): void
 
 }
 
@@ -28,7 +28,8 @@ class Alquiler {
 class SMU << (S,#FF7700) Singleton >> {
     +getVehiculosDisponibles(): Vehiculo[]
     +getAlquileresActivos(): Alquiler[]
-    +registrarOperacionDeAlquiler(usuario: Usuario, vehiculo: Vehiculo): void
+    +registrarOperacionDeAlquiler(usuario: Usuario, vehiculo: Vehiculo, cantidadDias: int): void
+    +terminarAlquiler(usuario: Usuario, vehiculo: Vehiculo): void
 
 }
 
