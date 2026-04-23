@@ -1,0 +1,41 @@
+@startuml
+abstract class Vehiculo {
+  #disponible: boolean
+  +estaDisponible(): boolean
+  +alquilar(): void
+  +devolver(): void
+}
+
+class Bicicleta extends Vehiculo {
+}
+
+class Monopatin extends Vehiculo {
+}
+
+class Usuario {
+
+    +alquilarVehiculo(vehiculo: Vehiculo): void
+    +devolverVehiculo(vehiculo: Vehiculo): void
+
+}
+
+class Alquiler {
+    -usuario: Usuario
+    -vehiculo: Vehiculo
+
+}
+
+class SMU << (S,#FF7700) Singleton >> {
+    +getVehiculosDisponibles(): Vehiculo[]
+    +getAlquileresActivos(): Alquiler[]
+    +registrarOperacionDeAlquiler(usuario: Usuario, vehiculo: Vehiculo): void
+}
+
+'=== RELACIONES ==='
+SMU "1" --> "*" Alquiler : registra
+SMU "1" --> "*" Vehiculo : registra
+Alquiler ---> Usuario : registra
+Alquiler ---> Vehiculo : registra
+Usuario ..> SMU : utiliza
+
+@enduml
