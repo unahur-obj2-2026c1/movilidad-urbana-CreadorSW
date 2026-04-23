@@ -29,6 +29,7 @@ class SMU << (S,#FF7700) Singleton >> {
     +getVehiculosDisponibles(): Vehiculo[]
     +getAlquileresActivos(): Alquiler[]
     +registrarOperacionDeAlquiler(usuario: Usuario, vehiculo: Vehiculo): void
+
 }
 
 '=== RELACIONES ==='
