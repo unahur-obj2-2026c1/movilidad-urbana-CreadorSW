@@ -27,7 +27,7 @@ class Alquiler {
 class SMU << (S,#FF7700) Singleton >> {
     +getVehiculosDisponibles(): Vehiculo[]
     +getAlquileresActivos(): Alquiler[]
-    +registrarOperacionDeAlquiler(usuario: Usuario, vehiculo: Vehiculo, cantidadDias: int): void
+    +registrarAlquiler(usuario: Usuario, vehiculo: Vehiculo, cantidadDias: int): void
     +terminarAlquiler(usuario: Usuario, vehiculo: Vehiculo): void
 
 }
