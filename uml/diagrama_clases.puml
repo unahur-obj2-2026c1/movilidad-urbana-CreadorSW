@@ -1,9 +1,8 @@
 @startuml
 abstract class Vehiculo {
   #disponible: boolean
-  +estaDisponible(): boolean
-  +alquilar(): void
-  +devolver(): void
+  +isDisponible(): boolean
+  +setDisponible(disponible: boolean): void
 }
 
 class Bicicleta extends Vehiculo {
